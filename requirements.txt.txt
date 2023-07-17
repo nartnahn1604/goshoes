@@ -1,0 +1,8 @@
+dj-database-url
+Django
+django-database-url
+gunicorn
+psycopg2
+sqlparse
+djangorestframework
+django-cors-headers
