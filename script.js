@@ -37,7 +37,6 @@ fetch("https://goshoes.onrender.com/")
         localStorage.setItem('total', 0)
         cart = []
         total = 0
-        // cartItemList.style.display = "none"
         totalPrice.innerText = '0.00$'
     }
     else{
@@ -81,9 +80,9 @@ function addToCart(id){
         name: currentItem.childNodes[3].childNodes[1].innerText,
         image: currentItem.childNodes[1].childNodes[1].src,
         price: parseFloat(price),
+        color: currentItem.childNodes[1].style.backgroundColor,
         quantity: 1
     }
-
     var item = generateCartItem(addItem)
 
     cartItemList.innerHTML += item
@@ -106,26 +105,26 @@ function calTotal(cart){
 
 function generateCartItem(item){
     return "<div class='cart-item'>" + 
-                    "<div class='cart-item-left'>"+
-                    "<div class='cart-item-image-bg'>"+
-                            "<img class='cart-item-image' src='" + item["image"] + "'>"+
-                            "</div>"+
-                            "</div>"+
-                            "<div class='cart-item-right'>"+
-                        "<div class='cart-item-name'>" + item["name"] + item["id"] + "</div>"+
-                        "<div class='cart-item-price'>" + item["price"] + "$</div>"+
-                        "<div class='cart-item-action'>"+
-                            "<div class='cart-item-count'>"+
-                                "<div class='cart-item-count-btn' onclick='desQuan(" + item["id"] + ")'>-</div>"+
-                                "<div id='number" + item["id"] + "' class='cart-item-count-number'>" + item["quantity"] + "</div>"+
-                                "<div class='cart-item-count-btn' onclick='incQuan(" + item["id"] + ")'>+</div>"+
-                            "</div>"+
-                            "<div class='cart-item-remove' onclick='removeItem(" + item["id"] + ")'>"+
-                                "<img src='./assets/trash.png'>"+
-                            "</div>"+
+                "<div class='cart-item-left'>"+
+                    "<div class='cart-item-image-bg' style='background-color:" + item["color"] + "'>"+
+                        "<img class='cart-item-image' src='" + item["image"] + "'>"+
+                    "</div>"+
+                "</div>"+
+                "<div class='cart-item-right'>"+
+                    "<div class='cart-item-name'>" + item["name"] + item["id"] + "</div>"+
+                    "<div class='cart-item-price'>" + item["price"] + "$</div>"+
+                    "<div class='cart-item-action'>"+
+                        "<div class='cart-item-count'>"+
+                            "<div class='cart-item-count-btn' onclick='desQuan(" + item["id"] + ")'>-</div>"+
+                            "<div id='number" + item["id"] + "' class='cart-item-count-number'>" + item["quantity"] + "</div>"+
+                            "<div class='cart-item-count-btn' onclick='incQuan(" + item["id"] + ")'>+</div>"+
+                        "</div>"+
+                        "<div class='cart-item-remove' onclick='removeItem(" + item["id"] + ")'>"+
+                            "<img src='./assets/trash.png'>"+
                         "</div>"+
                     "</div>"+
-                "</div>"
+                "</div>"+
+            "</div>"
             }
             
 function removeItem(id){
