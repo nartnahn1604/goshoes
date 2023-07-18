@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOShoes</title>
+    <!-- <link rel="shortcut icon" href="{% static 'assets/favicon.ico' %}" type="image/x-icon"> -->
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="d-flex align-items-center justify-content-between position-relative flex-wrap main">
+        <div class="custom-card shadow-lg rounded-5 position-relative mb-3">
+            <div class="card-top">
+                <div class="logo">
+                    <img class="logo" src="./assets/nike.png" alt="">
+                </div>
+                <div class="card-heading">
+                    Our products
+                </div>
+            </div>
+            <div id="items-list" class="items-list">
+
+            </div>
+          </div>
+        <div class="custom-card shadow-lg rounded-5 position-relative">
+            <div id="cart-top" class="card-top">
+                <div class="logo">
+                    <img class="logo" src="./assets/nike.png" alt="">
+                </div>
+                <div class="card-heading flex-column">
+                    Your cart
+                    <span id="total" class="float-end">0.00$</span>
+                </div>
+            </div>
+            <div id="cart-list" class="cart-item-list">
+
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
