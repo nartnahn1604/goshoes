@@ -19,6 +19,6 @@
 ## LIVE DEMO
 
 ### [FE](https://goshoes.netlify.app/)
-### [BE:}(https://goshoes.onrender.com/)
-#### Add new item to database: Use Postman to send an HTTPS POST Request
+### [BE:](https://goshoes.onrender.com/)
+#### Add a new item to database: Use Postman to send an HTTPS POST Request
 ![image](https://github.com/nartnahn1604/goshoes/assets/87871710/9fd556d8-fe5f-43b7-baa8-7d4ade7fde4f)
