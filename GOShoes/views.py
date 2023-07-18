@@ -12,10 +12,11 @@ def index(request):
     if request.method == 'GET':
         shoeses = Shoes.objects.all()
         shoeses_serializers = ShoesSerializer(shoeses, many=True)
-        context = {
-            'data': shoeses_serializers.data,
-        }
-        return render(request, 'index.html', context)
+        # context = {
+        #     'data': shoeses_serializers.data,
+        # }
+        # return render(request, 'index.html', context)
+        return JsonResponse(shoeses_serializers.data, safe=False)
     elif request.method == 'POST':
         shoes_data = JSONParser().parse(request)
         shoes_serializers = ShoesSerializer(data=shoes_data)
