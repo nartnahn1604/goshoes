@@ -35,13 +35,16 @@ fetch("https://goshoes.onrender.com/")
     if(cart === null || cart === undefined){
         localStorage.setItem('cart', JSON.stringify([]))
         localStorage.setItem('total', 0)
-        cartItemList.style.display = "none"
+        cart = []
+        total = 0
+        // cartItemList.style.display = "none"
         totalPrice.innerText = '0.00$'
     }
     else{
         cart = JSON.parse(cart)
         if(cart.length === 0){
             localStorage.setItem('total', 0)
+            total = 0
             totalPrice.innerText = '0.00$'
         }
         else{
@@ -84,8 +87,12 @@ function addToCart(id){
     var item = generateCartItem(addItem)
 
     cartItemList.innerHTML += item
-
-    cart[cart.length] = addItem
+    try{
+        cart[cart.length] = addItem
+    }
+    catch(e){
+        cart[0] = addItem
+    }
     updateLocalStorage()
 }
 
